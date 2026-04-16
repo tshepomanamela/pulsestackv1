@@ -31,5 +31,5 @@ module "compute" {
   resource_group_name = var.resource_group_name
   location            = var.location
   subnet_id           = module.networking.subnet_id
-  admin_ssh_key       = var.admin_ssh_key
+  ssh_public_key      = var.admin_ssh_key
 }
