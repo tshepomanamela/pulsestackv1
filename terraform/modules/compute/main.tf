@@ -1,8 +1,9 @@
 resource "azurerm_public_ip" "main" {
-    name                = "pulsestack-pip"
-    location            = var.location
-    resource_group_name = var.resource_group_name
-    allocation_method   = "Static"
+  name                = "pulsestack-pip"
+  location            = var.location
+  resource_group_name = var.resource_group_name
+  allocation_method   = "Static"
+  sku                 = "Standard"
 }
 resource "azurerm_network_interface" "main" {
   
@@ -23,7 +24,7 @@ resource "azurerm_linux_virtual_machine" "main" {
     name                = "pulsestack-vm"
     location            = var.location
     resource_group_name = var.resource_group_name
-    size                = "Standard_B2s"
+    size                = "Standard_B2s_v2"
     admin_username      = "azureuser"
     network_interface_ids = [
         azurerm_network_interface.main.id,

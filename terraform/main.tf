@@ -20,6 +20,7 @@ terraform {
 provider "azurerm" {
   features {}
   tenant_id = "7f03ac40-ab26-47f5-88c3-95ba4ed359d5"
+  subscription_id = "68129bb7-e267-4852-b7ac-ddbf414229ff"
 }
 
 module "networking" {
