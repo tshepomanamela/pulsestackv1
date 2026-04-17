@@ -45,8 +45,7 @@ resource "azurerm_linux_virtual_machine" "main" {
         version   = "latest"
 
    }
-   custom_data = base64encode(file("${path.module}/../../scripts/bootstrap.sh"))
-   
+   custom_data = base64encode(file("${path.module}/../../../scripts/bootstrap.sh"))
 }
 output "public_ip" {
     value = azurerm_public_ip.main.ip_address
